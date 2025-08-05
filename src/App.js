@@ -16,10 +16,11 @@ const simulatedAPIResponse = {
   ],
 };
 
-const [isDarkMode, setIsDarkMode] = useState(false);
+
 
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
   const [loading, setLoading] = useState(false);
