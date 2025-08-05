@@ -21,5 +21,3 @@ It simulates a legal chatbot that answers user queries and provides citations fr
 
 ---
 
-## 📁 Project Structure
-
