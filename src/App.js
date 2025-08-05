@@ -16,6 +16,9 @@ const simulatedAPIResponse = {
   ],
 };
 
+const [isDarkMode, setIsDarkMode] = useState(false);
+
+
 function App() {
   const [query, setQuery] = useState("");
   const [submittedQuery, setSubmittedQuery] = useState("");
@@ -44,8 +47,12 @@ function App() {
   };
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${isDarkMode ? "dark" : ""}`}>
       <div className="chat-box">
+      <button onClick={() => setIsDarkMode(!isDarkMode)}style={{ marginBottom: "10px", alignSelf: "flex-end" }}>
+         Switch to {isDarkMode ? "Light" : "Dark"} Mode
+      </button>
+
         <h1 className="heading">Lexi Legal Assistant</h1>
 
         <div className="messages">
