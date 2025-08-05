@@ -16,9 +16,6 @@ const simulatedAPIResponse = {
   ],
 };
 
-
-
-
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   const [query, setQuery] = useState("");
@@ -31,8 +28,8 @@ function App() {
   const handleSubmit = () => {
     if (!query.trim()) return;
 
-    setSubmittedQuery(query); 
-    setQuery(""); 
+    setSubmittedQuery(query);
+    setQuery("");
     setLoading(true);
     setAnswerData(null);
 
@@ -50,9 +47,21 @@ function App() {
   return (
     <div className={`app-container ${isDarkMode ? "dark" : ""}`}>
       <div className="chat-box">
-      <button onClick={() => setIsDarkMode(!isDarkMode)}style={{ marginBottom: "10px", alignSelf: "flex-end" }}>
-         Switch to {isDarkMode ? "Light" : "Dark"} Mode
-      </button>
+        <button
+          onClick={() => setIsDarkMode(!isDarkMode)}
+          style={{
+            marginBottom: "10px",
+            alignSelf: "flex-end",
+            fontSize: "1.5rem",
+            background: "none",
+            border: "none",
+            cursor: "pointer",
+          }}
+          aria-label={`Switch to ${isDarkMode ? "Light" : "Dark"} Mode`}
+          title={`Switch to ${isDarkMode ? "Light" : "Dark"} Mode`}
+        >
+          {isDarkMode ? "☀️" : "🌙"}
+        </button>
 
         <h1 className="heading">Lexi Legal Assistant</h1>
 
@@ -99,10 +108,7 @@ function App() {
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Ask a legal question..."
           />
-          <button
-            onClick={handleSubmit}
-            disabled={loading || !query.trim()}
-          >
+          <button onClick={handleSubmit} disabled={loading || !query.trim()}>
             {loading ? "Loading..." : "Submit"}
           </button>
         </div>
