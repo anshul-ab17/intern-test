@@ -63,7 +63,8 @@ function App() {
           {isDarkMode ? "☀️" : "🌙"}
         </button>
 
-        <h1 className="heading">Lexi Legal Assistant</h1>
+        <h1 className="heading">LegitAsk</h1>
+
 
         <div className="messages">
           {submittedQuery && (
